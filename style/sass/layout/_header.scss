@@ -1,0 +1,57 @@
+header {
+    .fixed {
+        height: 95px;
+        width: 100%;
+        margin-top: 5px;
+        .img {
+            background-image: url("/assets/logo-mobile.svg");
+        };
+        h2 {
+            margin: -52.5px 0 0 11px;
+        }
+        .ham {
+            // ----------------------------------
+            // TEMPORAL
+            // TODO = Burger shape
+            // height: 15px;
+            // width: 15px;
+            // END OF TEMPORAL
+            // ----------------------------------
+            position: absolute;
+            z-index: 99999000;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            background-image: url('/assets/burger.svg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+    .showClose {
+        background-image: url('/assets/close.svg');
+    }
+
+    .navbar {
+      top: 0;
+      left: 0;
+      background: $main-color;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      color: white;
+      /* hide the menu above the screen by default */
+      transform: translateX(-100%);
+      /* transition adds a little animation when sliding in and out the menu */
+      transition: transform 0.2s ease;
+      ul {
+          margin-top: 117px;
+      }
+    }
+    .showNav {
+        transform: translateX(0);
+    }
+
+}

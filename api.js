@@ -1,14 +1,15 @@
-let apiKey = "O2nUKxzL8f8GL44CGQ3ml1AVeRMmdBbP";
+let apiKey = 'O2nUKxzL8f8GL44CGQ3ml1AVeRMmdBbP';
 
 // TRENDING
 
 // TEST: https://api.giphy.com/v1/gifs/trending?&api_key=O2nUKxzL8f8GL44CGQ3ml1AVeRMmdBbP
 
-let url = `https://api.giphy.com/v1/gifs/trending?&api_key=${apiKey}`;
+let url = 'https://api.giphy.com/v1/gifs';
 
 console.log(url)
-async function getData() {
-    const response = await fetch(url);
+async function getTrending() {
+    const response = await fetch(`${url}/trending?&api_key=${apiKey}`);
+    console.log(`${url}/trending?&api_key=${apiKey}`)
     const content = await response.json();
     // Aca se busca la data dentro del json del api, data > data 0
     console.log(content.data[0].images.downsized.url);
@@ -19,9 +20,17 @@ async function getData() {
         let img = document.createElement('img');
         // img.src changes the source of the image
         img.src = content.data[i].images.downsized.url;
-        document.querySelector('.out').appendChild(fig).appendChild(img);
+        document.querySelector('#trending').appendChild(fig).appendChild(img);
     }
 }
 
+// search example https://api.giphy.com/v1/gifs/search?&api_key=O2nUKxzL8f8GL44CGQ3ml1AVeRMmdBbP&q=dogs
 
-getData(); 
+function userSearch(){
+    let input = document.querySelector('#userInput')
+}
+
+
+// suggestions example
+
+getTrending(); 

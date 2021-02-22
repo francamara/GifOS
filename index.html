@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +9,17 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <!-- <img src="/_extra/GIFOS-UI-Desktop+Mobile-Update/assets/camara-modo-noc.svg" alt=""> -->
+        <div class="fixed">
+            <div class="img"></div>
+            <!-- <img src="/assets/logo-mobile.svg" alt=""> -->
+            <h2></h2>
+            <button class="ham"></button>
         </div>
-        <nav>
+        <nav class="navbar">
             <ul>
-                <li>modo nocturno</li>
-                <li>favoritos</li>
-                <li>mis gifos</li>
+                <li><a class="menuLink" href="#">modo nocturno</a></li>
+                <li><a class="menuLink" href="#">favoritos</a></li>
+                <li><a class="menuLink" href="#">mis gifos</a></li>
             </ul>
         </nav>
         <div class="add-more"></div>
@@ -27,11 +30,13 @@
                 <h1>Inspírate, busca, guarda, y crea los mejores GIFOS</h1>
             </div>
             <div class="user-input">
-                <input type="text" name="" id="">
+                <input type="text" name="" id="userInput">
                 <button>search</button>
             </div>
             <!-- RESULT OF SEARCH -->
-            <div class="out"></div>
+            <div class="gif-container"></div>
+            <!-- TRENDING GIFS -->
+            <div class="gif-container" id="trending"></div>
         </div>
     </main>
     <footer>
@@ -43,5 +48,6 @@
         </div>
     </footer>
     <script src="api.js"></script>
+    <script src="toggleMenu.js"></script>
 </body>
 </html>

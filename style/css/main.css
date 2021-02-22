@@ -1,29 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
-  font-family: sans-serif; }
+  font-family: sans-serif;
+}
 
 body {
-  margin: 0; }
+  margin: 0;
+}
 
 a {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+}
 
 img {
-  border: 0; }
+  border: 0;
+}
 
 button {
   border: none;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 h1, h2, h3, h4, h5, p {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 li {
-  list-style: none; }
+  list-style: none;
+}
 
 body {
-  max-width: 100%; }
+  max-width: 100%;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #572EE5;
+  font-size: 25px;
+  line-height: 50px;
+}
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #572EE5;
+    font-size: 35px;
+    line-height: 50px;
+  }
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #572EE5;
+  font-size: 16px;
+  line-height: 50px;
+}
+@media screen and (min-width: 1000px) {
+  h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #572EE5;
+    font-size: 35px;
+    line-height: 50px;
+  }
+}
+
+img {
+  font-family: "Montserrat", sans-serif;
+}
+
+header .fixed {
+  height: 95px;
+  width: 100%;
+  margin-top: 5px;
+}
+header .fixed .img {
+  background-image: url("/assets/logo-mobile.svg");
+}
+header .fixed h2 {
+  margin: -52.5px 0 0 11px;
+}
+header .fixed .ham {
+  position: absolute;
+  z-index: 99999000;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  background-image: url("/assets/burger.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: transparent;
+  cursor: pointer;
+}
+header .showClose {
+  background-image: url("/assets/close.svg");
+}
+header .navbar {
+  top: 0;
+  left: 0;
+  background: #572EE5;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  /* hide the menu above the screen by default */
+  transform: translateX(-100%);
+  /* transition adds a little animation when sliding in and out the menu */
+  transition: transform 0.2s ease;
+}
+header .navbar ul {
+  margin-top: 117px;
+}
+header .showNav {
+  transform: translateX(0);
+}
 
 /*# sourceMappingURL=main.css.map */
