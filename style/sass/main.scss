@@ -1,15 +1,18 @@
 // UTILS
-@import 'utils/helpers';
-@import 'utils/mixins';
-@import 'utils/variables';
+@import "utils/helpers";
+@import "utils/mixins";
+@import "utils/variables";
 // BASE
-@import 'base/reset';
-@import 'base/typo';
+@import "base/reset";
+@import "base/typo";
 // LAYOUT
-@import 'layout/header';
+@import "layout/header";
+@import "layout/search-box";
+@import "layout/gif-grid";
 // COMPONENTS
-@import 'components/buttons';
+@import "components/buttons";
 // PAGES
 
-// HELPERS
-@import "utils/helpers";
+#trending {
+  margin-top: 50px;
+}

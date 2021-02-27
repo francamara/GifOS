@@ -1,0 +1,14 @@
+.gif-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 0px 0px;
+  grid-template-areas: ". .";
+  .gif-container {
+    height: 120px;
+    width: 156px;
+    background-color: red;
+    img {
+    }
+  }
+}
