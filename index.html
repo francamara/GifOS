@@ -1,53 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style/css/main.css">
-</head>
-<body>
-    <header>
-        <div class="fixed">
-            <div class="img"></div>
-            <!-- <img src="/assets/logo-mobile.svg" alt=""> -->
-            <h2></h2>
-            <button class="ham"></button>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a class="menuLink" href="#">modo nocturno</a></li>
-                <li><a class="menuLink" href="#">favoritos</a></li>
-                <li><a class="menuLink" href="#">mis gifos</a></li>
-            </ul>
-        </nav>
-        <div class="add-more"></div>
-    </header>
+    <link rel="stylesheet" href="style/css/main.css" />
+  </head>
+  <body>
     <main>
-        <div class="search-box">
-            <div class="title">
-                <h1>Inspírate, busca, guarda, y crea los mejores GIFOS</h1>
-            </div>
-            <div class="user-input">
-                <input type="text" name="" id="userInput">
-                <button>search</button>
-            </div>
-            <!-- RESULT OF SEARCH -->
-            <div class="gif-container"></div>
-            <!-- TRENDING GIFS -->
-            <div class="gif-container" id="trending"></div>
+      <div class="search-box">
+        <div class="title">
+          <h1>Inspírate, busca, guarda, y crea los mejores GIFOS</h1>
         </div>
+        <div class="user-input">
+          <input type="text" name="" id="userInput" />
+          <button>search</button>
+        </div>
+        <!-- RESULT OF SEARCH -->
+        <div class="gif-container"></div>
+        <!-- TRENDING GIFS -->
+        <div class="gif-container" id="trending"></div>
+      </div>
     </main>
     <footer>
-        <div class="share">
-            <p>Compartir en</p>
-        </div>
-        <div class="copyright">
-            <p>© GIFOS 2020 All Rights Reserved.</p>
-        </div>
+      <div class="share">
+        <p>Compartir en</p>
+      </div>
+      <div class="copyright">
+        <p>© GIFOS 2020 All Rights Reserved.</p>
+      </div>
     </footer>
     <script src="api.js"></script>
-    <script src="toggleMenu.js"></script>
-</body>
+    <!-- <script src="toggleMenu.js"></script> -->
+  </body>
 </html>
