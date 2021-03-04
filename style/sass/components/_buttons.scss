@@ -1,0 +1,17 @@
+.show-more {
+  display: none;
+}
+.display-show-more {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include font-montserrat-bold;
+  color: $main-color;
+  background: transparent;
+  width: 127px;
+  height: 50px;
+  border: 1px solid $main-color;
+  border-radius: 25px;
+  margin: 79px auto;
+}

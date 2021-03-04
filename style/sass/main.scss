@@ -7,12 +7,8 @@
 @import "base/typo";
 // LAYOUT
 @import "layout/header";
-@import "layout/search-box";
 @import "layout/gif-grid";
+@import "layout/footer";
 // COMPONENTS
 @import "components/buttons";
 // PAGES
-
-#trending {
-  margin-top: 50px;
-}

@@ -1,5 +1,5 @@
-let apiKey = "O2nUKxzL8f8GL44CGQ3ml1AVeRMmdBbP"
-let url = "https://api.giphy.com/v1"
+const apiKey = "O2nUKxzL8f8GL44CGQ3ml1AVeRMmdBbP"
+const url = "https://api.giphy.com/v1"
 
 // API REQUEST FUNCTION ----------------------------------------------------------------------------------
 
@@ -14,6 +14,15 @@ function request(url) {
   })
 }
 
+function createCard(src, container, cardId) {
+  let card = document.createElement("div")
+  card.className = cardId
+  let img = document.createElement("img")
+  img.src = src
+  card.appendChild(img)
+  container.appendChild(card)
+}
+
 // TRENDING SECTION ----------------------------------------------------------------------------------
 
 // 6 de carne fritas
@@ -25,13 +34,13 @@ let urlTrending = `${url}/gifs/trending?api_key=${apiKey}`
 request(urlTrending)
   .then((content) => {
     // Shows the first 10 results of the trending gifs
+    let container = document.querySelector("#trending")
     for (let i = 0; i <= 10; i++) {
-      let div = document.createElement("div")
-      div.className = "gif-container"
-      let img = document.createElement("img")
-      document.querySelector("#search").innerHTML = ""
-      img.src = content.data[i].images.downsized.url
-      document.querySelector("#trending").appendChild(div).appendChild(img)
+      createCard(
+        content.data[i].images.downsized.url,
+        container,
+        "gif-container"
+      )
     }
   })
   .catch((error) => {
@@ -39,48 +48,55 @@ request(urlTrending)
   })
 
 // SEARCH BOX ----------------------------------------------------------------------------------
+const userInput = document.querySelector("#txt-search")
+const searchBtn = document.querySelector("#btn-search")
 
-let urlSearch
-
-function userSearch() {
-  let userSearch = document.querySelector("#user-search")
-  userSearch.addEventListener("click", () => {
-    let userInput = document.querySelector("#user-input")
-    let urlSearch = `${url}/gifs/search?api_key=${apiKey}&q=${userInput.value}`
-    console.log(urlSearch)
-    document.querySelector("#search").innerHTML = ""
-    request(urlSearch)
-      .then((content) => {
-        for (let i = 0; i <= 10; i++) {
-          let div = document.createElement("div")
-          div.className = "gif-container"
-          let img = document.createElement("img")
-          img.src = content.data[i].images.downsized.url
-          document.querySelector("#search").appendChild(div).appendChild(img)
-        }
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  })
+function getSearch() {
+  let urlSearch = `${url}/gifs/search?api_key=${apiKey}&q=${userInput.value}`
+  request(urlSearch)
+    .then((content) => {
+      let container = document.querySelector("#result")
+      for (let i = 0; i <= 11; i++) {
+        createCard(
+          content.data[i].images.downsized.url,
+          container,
+          "gif-container"
+        )
+      }
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+  document.querySelector("#result").innerHTML = ""
+  document.querySelector(".show-more").classList.add("display-show-more")
 }
 
-userSearch()
+userInput.addEventListener("keyup", (event) => {
+  console.log("keyup")
+  if (event.keyCode === 13) {
+    getSearch(userInput.value)
+  }
+})
+
+searchBtn.addEventListener("click", () => {
+  getSearch(userInput.value)
+})
 
 // SUGGESTED CATEGORIES
 
-let urlCategories = `${url}/trending/searches?api_key=${apiKey}`
+// let urlCategories = `${url}/trending/searches?api_key=${apiKey}`
+// request(urlTrending)
+//   .then((content) => {
+//     for (let i = 0; i <= 4; i++) {
+//       let apiArray = content.data[i].images.downsized.url
 
-request(urlTrending)
-  .then((content) => {
-    for (let i = 0; i <= 5; i++) {
-      let apiArray = document.createElement("p")
-      //      apiArray.textContent.toString = content.data[i]
-      apiArray.textContent.toString()
-      console.log(apiArray.toString())
-      document.querySelector("#suggestions").appendChild(apiArray)
-    }
-  })
-  .catch((error) => {
-    console.error(error)
-  })
+//       console.log(apiArray)
+//       // JSON.stringify(apiArray)
+//       // apiArray.textContent = content.data[i].stringify
+//       // console.log(apiArray)
+//       // document.querySelector("#suggestions").appendChild(apiArray)
+//     }
+//   })
+//   .catch((error) => {
+//     console.error(error)
+//   })

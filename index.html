@@ -9,66 +9,87 @@
   </head>
   <body>
     <header>
-      <a href="index.html">
-        <svg
-          width="53px"
-          height="49px"
-          viewBox="0 0 53 49"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
-          <title>logo-mobile</title>
-          <desc>Created with Sketch.</desc>
-          <defs>
-            <polygon
-              id="path-1"
-              points="0.837379272 0.943343486 48.5296106 0.943343486 48.5296106 20.459945 0.837379272 20.459945"
-            ></polygon>
-          </defs>
-          <g
-            id="GIFOS"
-            stroke="none"
-            stroke-width="1"
-            fill="none"
-            fill-rule="evenodd"
-          >
-            <g id="00-UI-Kit" transform="translate(-347.000000, -2463.000000)">
+      <nav>
+        <div class="nav-items">
+          <a href="index.html">
+            <svg
+              width="53px"
+              height="49px"
+              viewBox="0 0 53 49"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <title>logo-mobile</title>
+              <desc>Created with Sketch.</desc>
+              <defs>
+                <polygon
+                  id="path-1"
+                  points="0.837379272 0.943343486 48.5296106 0.943343486 48.5296106 20.459945 0.837379272 20.459945"
+                ></polygon>
+              </defs>
               <g
-                id="logo-mobile"
-                transform="translate(347.000000, 2463.000000)"
+                id="GIFOS"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
               >
-                <g id="Group-5">
-                  <polygon
-                    id="Fill-1"
-                    fill="#5ED7C6"
-                    points="0 -0.0002 0 48.7913039 48.7915039 48.7913039 48.7915039 38.3359816 45.3063965 38.3359816 45.3063965 45.3061965 3.48510742 45.3061965 3.48510742 3.48490742 34.8510742 3.48490742 34.8510742 13.9402297 45.3063965 13.9402297 45.3063965 20.9111416 48.7915039 20.9111416 48.7915039 10.4551223 38.3361816 -0.0002"
-                  ></polygon>
-                  <g id="Group-4" transform="translate(7.000000, 16.000000)">
-                    <mask id="mask-2" fill="white">
-                      <use xlink:href="#path-1"></use>
-                    </mask>
-                    <g id="Clip-3"></g>
-                    <text
-                      id="GIFOS"
-                      mask="url(#mask-2)"
-                      font-family="Roboto-Black, Roboto"
-                      font-size="16"
-                      font-weight="700"
-                      fill="#572EE5"
-                    >
-                      <tspan x="1" y="20">GIFOS</tspan>
-                    </text>
+                <g
+                  id="00-UI-Kit"
+                  transform="translate(-347.000000, -2463.000000)"
+                >
+                  <g
+                    id="logo-mobile"
+                    transform="translate(347.000000, 2463.000000)"
+                  >
+                    <g id="Group-5">
+                      <polygon
+                        id="Fill-1"
+                        fill="#5ED7C6"
+                        points="0 -0.0002 0 48.7913039 48.7915039 48.7913039 48.7915039 38.3359816 45.3063965 38.3359816 45.3063965 45.3061965 3.48510742 45.3061965 3.48510742 3.48490742 34.8510742 3.48490742 34.8510742 13.9402297 45.3063965 13.9402297 45.3063965 20.9111416 48.7915039 20.9111416 48.7915039 10.4551223 38.3361816 -0.0002"
+                      ></polygon>
+                      <g
+                        id="Group-4"
+                        transform="translate(7.000000, 16.000000)"
+                      >
+                        <mask id="mask-2" fill="white">
+                          <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-3"></g>
+                        <text
+                          id="GIFOS"
+                          mask="url(#mask-2)"
+                          font-family="Roboto-Black, Roboto"
+                          font-size="16"
+                          font-weight="700"
+                          fill="#572EE5"
+                        >
+                          <tspan x="1" y="20">GIFOS</tspan>
+                        </text>
+                      </g>
+                    </g>
                   </g>
                 </g>
               </g>
-            </g>
-          </g>
-        </svg>
-      </a>
-    </header>
-    <main>
+            </svg>
+          </a>
+          <div class="menu-btn">
+            <div class="burger-shape"></div>
+          </div>
+        </div>
+        <ul class="menu-items">
+          <li>Modo Nocturno</li>
+          <span></span>
+          <li>Favoritos</li>
+          <span></span>
+          <li>Mis GIFOS</li>
+          <span></span>
+          <!-- <button class="create-gifos-button" id="create-gifos-button">
+              <img src="./assets/button-crear-gifo.svg" alt="" />
+            </button> -->
+        </ul>
+      </nav>
       <div class="search">
         <div class="title">
           <h1>
@@ -82,30 +103,49 @@
             alt="people-together-svg"
             id="search-img-top"
           />
-          <input type="text" name="" id="user-input" />
-          <button id="user-search">
-            <img src="/assets/icon-search.svg" alt="" />
-          </button>
+          <div class="input">
+            <input
+              type="text"
+              name=""
+              id="txt-search"
+              placeholder="Busca GIFOS y mas"
+            />
+            <button id="btn-search">
+              <img src="/assets/icon-search.svg" alt="" />
+            </button>
+          </div>
           <div class="text-suggestion">
-            <h2>Trending:</h2>
+            <h3>Trending:</h3>
             <div id="suggestions"></div>
           </div>
         </div>
       </div>
+    </header>
+    <main>
       <!-- RESULT OF SEARCH -->
-      <div class="gif-grid" id="search"></div>
+      <div id="search">
+        <div class="gif-grid" id="result"></div>
+        <button class="show-more">Ver mas</button>
+      </div>
       <!-- TRENDING GIFS -->
-      <div class="gif-grid" id="trending"></div>
+      <div class="trending-container">
+        <h2>Trending GIFOS</h2>
+        <p class="trending-text">Mira los ultimos</p>
+        <p class="trending-text">GIFOS de nuestra comunidad</p>
+        <div id="trending"></div>
+      </div>
     </main>
     <footer>
-      <div class="share">
-        <p>Compartir en</p>
-      </div>
-      <div class="copyright">
-        <p>© GIFOS 2020 All Rights Reserved.</p>
+      <div class="footer-container">
+        <div class="share">
+          <p>Compartir en</p>
+        </div>
+        <div class="copyright">
+          <p>© GIFOS 2020 All Rights Reserved.</p>
+        </div>
       </div>
     </footer>
     <script src="api.js"></script>
-    <!-- <script src="toggleMenu.js"></script> -->
+    <script src="toggleMenu.js"></script>
   </body>
 </html>

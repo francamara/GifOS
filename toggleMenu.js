@@ -1,18 +1,23 @@
-var navbar = document.querySelector(".navbar")
-var ham = document.querySelector(".ham")
+const menuBtn = document.querySelector(".menu-btn")
+const menuItems = document.querySelector(".menu-items")
 
-function toggleHamburger(){
-  navbar.classList.toggle("showNav")
-  ham.classList.toggle("showClose")
-}
+let showMobileMenu = false
+let menuOpen = false
 
-ham.addEventListener("click", toggleHamburger)
+/**
+ * if mobile menu disabled set to enabled and viceversa
+ */
 
-
-// METHOD 1
-var menuLinks = document.querySelectorAll(".menuLink")
-menuLinks.forEach( 
-  function(menuLink) { 
-    menuLink.addEventListener("click", toggleHamburger) 
+menuBtn.addEventListener("click", () => {
+  if (!menuOpen && !showMobileMenu) {
+    menuBtn.classList.add("open")
+    menuItems.classList.add("menu-open")
+    menuOpen = true
+    showMobileMenu = true
+  } else {
+    menuBtn.classList.remove("open")
+    menuItems.classList.remove("menu-open")
+    menuOpen = false
+    showMobileMenu = false
   }
-)
+})
