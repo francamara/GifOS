@@ -29,12 +29,12 @@ function createCard(src, container, cardId) {
 // 2 verdura al horno
 // 1 jamon y queso frita
 
-let urlTrending = `${url}/gifs/trending?api_key=${apiKey}`
+const urlTrending = `${url}/gifs/trending?api_key=${apiKey}`
 
 request(urlTrending)
   .then((content) => {
     // Shows the first 10 results of the trending gifs
-    let container = document.querySelector("#trending")
+    const container = document.querySelector("#trending")
     for (let i = 0; i <= 10; i++) {
       createCard(
         content.data[i].images.downsized.url,
@@ -53,6 +53,7 @@ const searchBtn = document.querySelector("#btn-search")
 
 function getSearch() {
   let urlSearch = `${url}/gifs/search?api_key=${apiKey}&q=${userInput.value}`
+  console.log(urlSearch)
   request(urlSearch)
     .then((content) => {
       let container = document.querySelector("#result")
@@ -72,7 +73,6 @@ function getSearch() {
 }
 
 userInput.addEventListener("keyup", (event) => {
-  console.log("keyup")
   if (event.keyCode === 13) {
     getSearch(userInput.value)
   }
@@ -82,21 +82,26 @@ searchBtn.addEventListener("click", () => {
   getSearch(userInput.value)
 })
 
-// SUGGESTED CATEGORIES
+// SUGGESTIONS
 
-// let urlCategories = `${url}/trending/searches?api_key=${apiKey}`
-// request(urlTrending)
-//   .then((content) => {
-//     for (let i = 0; i <= 4; i++) {
-//       let apiArray = content.data[i].images.downsized.url
+// https://api.giphy.com/v1/gifs/search/tags?api_key=O2nUKxzL8f8GL44CGQ3ml1AVeRMmdBbP&q=uni
 
-//       console.log(apiArray)
-//       // JSON.stringify(apiArray)
-//       // apiArray.textContent = content.data[i].stringify
-//       // console.log(apiArray)
-//       // document.querySelector("#suggestions").appendChild(apiArray)
-//     }
-//   })
-//   .catch((error) => {
-//     console.error(error)
-//   })
+userInput.addEventListener("keyup", () => {
+  let query = userInput.value
+  let currentInput = []
+  currentInput.push(query)
+  console.log(currentInput)
+  const urlSuggestions = `${url}/gifs/search/tags?api_key=${apiKey}&q=${currentInput}`
+  const suggestionsList = document.querySelector(".suggestedSearch")
+  if (currentInput[0] != "") {
+    request(urlSuggestions).then((content) => {
+      for (i = 0; i <= 5; i++) {
+        console.log(content.data[i].name)
+        suggestionsList.innerHTML = ""
+        const suggestion = document.createElement("li")
+        suggestion.textContent = content.data[i].name
+        suggestionsList.appendChild(suggestion)
+      }
+    })
+  }
+})
