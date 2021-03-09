@@ -187,14 +187,13 @@ header nav .nav-items .open .burger-shape::after {
 header nav .menu-items {
   justify-content: flex-start;
   flex-direction: column;
-  position: absolute;
   background-color: #572ee5;
   opacity: 90%;
   height: 100%;
-  margin: 0 auto;
-  padding-top: 17px;
+  width: 100%;
   left: 0;
-  right: 0;
+  top: 95px;
+  position: absolute;
   transform: translateX(-100vw);
   transition: ease-in-out 0.4s;
 }
