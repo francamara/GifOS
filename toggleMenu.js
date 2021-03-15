@@ -4,10 +4,6 @@ const menuItems = document.querySelector(".menu-items")
 let showMobileMenu = false
 let menuOpen = false
 
-/**
- * if mobile menu disabled set to enabled and viceversa
- */
-
 menuBtn.addEventListener("click", () => {
   if (!menuOpen && !showMobileMenu) {
     menuBtn.classList.add("open")

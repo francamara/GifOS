@@ -1,5 +1,13 @@
-.center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.text-black {
+  color: $black-color;
+}
+
+// DARK MODE SETTINGS
+
+.dark-mode {
+  background-color: $bg-darkmode-color;
+}
+
+.trending-dark-mode {
+  background-color: $trending-bg-darkmode-color;
 }

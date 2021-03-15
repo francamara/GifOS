@@ -78,11 +78,11 @@
             <div class="burger-shape"></div>
           </div>
           <ul class="menu-items">
-            <li>Modo Nocturno</li>
+            <li class="btn-cursor" id="dark-mode-btn">Modo Nocturno</li>
             <span></span>
-            <li>Favoritos</li>
+            <li class="btn-cursor">Favoritos</li>
             <span></span>
-            <li>Mis GIFOS</li>
+            <li class="btn-cursor">Mis GIFOS</li>
             <span></span>
           </ul>
         </div>
@@ -108,9 +108,9 @@
               placeholder="Busca GIFOS y mas"
             />
             <button id="btn-search">
-              <img src="/assets/icon-search.svg" alt="" />
+              <img src="/assets/icon-search.svg" alt="" id="icon-search" />
             </button>
-            <ul class="suggestedSearch"></ul>
+            <ul id="suggested-search"></ul>
           </div>
           <div class="text-suggestion">
             <h3>Trending:</h3>
@@ -145,5 +145,7 @@
     </footer>
     <script src="api.js"></script>
     <script src="toggleMenu.js"></script>
+    <script src="searchBox.js"></script>
+    <script src="toggleDarkMode.js"></script>
   </body>
 </html>
