@@ -15,12 +15,30 @@ function request(url) {
 }
 
 function createCard(src, container, cardId) {
-  let card = document.createElement('div')
+  const card = document.createElement('div')
   card.className = cardId
-  let img = document.createElement('img')
+  const favBtn = document.createElement('img')
+  favBtn.src = '/assets/icon-fav.svg'
+  favBtn.className = 'fav-btn'
+  const downloadBtn = document.createElement('div')
+  downloadBtn.className = 'download-btn'
+  // Desktop Hover Animation
+  card.addEventListener('mouseover', () => {
+    card.classList.add('card-hover')
+  })
+  card.addEventListener('mouseout', () => {
+    card.classList.remove('card-hover')
+  })
+  // Mobile Single Gif Card Menu
+  card.addEventListener('click', () => {
+    card.classList.toggle('card-click-mobile')
+  })
+  const img = document.createElement('img')
   img.src = src
   card.appendChild(img)
   container.appendChild(card)
+  container.appendChild(favBtn)
+  container.appendChild(downloadBtn)
 }
 
 // TRENDING SECTION ----------------------------------------------------------------------------------
