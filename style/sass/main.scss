@@ -1,0 +1,15 @@
+// UTILS
+@import 'utils/variables';
+@import 'utils/mixins';
+// BASE
+@import 'base/reset';
+@import 'base/typo';
+// LAYOUT
+@import 'layout/header';
+@import 'layout/gif-grid';
+@import 'layout/footer';
+// COMPONENTS
+@import 'components/buttons';
+@import 'components/gif-menu';
+// PAGES
+@import 'utils/helpers';
